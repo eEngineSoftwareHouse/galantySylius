@@ -1,6 +1,6 @@
 name: sylius
 
-type: php:8.3
+type: php:8.4
 
 relationships:
     database: "db:mysql"
