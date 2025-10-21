@@ -8,6 +8,11 @@ ENV ?= "dev"
 
 init:
 	@make -s docker-compose-check
+	@if [ "$$(id -u)" = "0" ]; then \
+		echo "Running as root (WSL2/Linux) - preparing permissions for Docker containers..."; \
+		chmod -R 777 var/ public/ 2>/dev/null || true; \
+		chown -R 1000:1000 vendor/ node_modules/ 2>/dev/null || true; \
+	fi
 	@if [ ! -e compose.override.yml ]; then \
 		cp compose.override.dist.yml compose.override.yml; \
 	fi
