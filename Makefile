@@ -1,7 +1,9 @@
 .PHONY: run
 
 DOCKER_COMPOSE ?= docker compose
-DOCKER_USER ?= "$(shell id -u):$(shell id -g)"
+# Avoid using root (0:0) as DOCKER_USER, especially in WSL2 environments
+# If id -u returns 0, fall back to 1000:1000 to prevent fixuid/PHP-FPM issues
+DOCKER_USER ?= $(shell if [ "$$(id -u)" = "0" ]; then echo "1000:1000"; else echo "$$(id -u):$$(id -g)"; fi)
 ENV ?= "dev"
 
 init:
