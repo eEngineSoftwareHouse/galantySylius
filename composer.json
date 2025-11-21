@@ -83,7 +83,7 @@
             "dev-main": "2.1-dev"
         },
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "^7.2",
             "endpoint": [
                 "https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main",
