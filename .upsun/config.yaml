@@ -5,7 +5,7 @@ applications:
             database: "db:mysql"
         mounts:
             "config/jwt":
-                source: instance
+                source: storage
                 source_path: jwt
             "/var/cache":
                 source: instance
@@ -14,19 +14,19 @@ applications:
                 source: instance
                 source_path: log
             "/var/sessions":
-                source: instance
+                source: storage
                 source_path: sessions
             "/public/assets":
-                source: instance
+                source: storage
                 source_path: assets
             "/public/bundles":
-                source: instance
+                source: storage
                 source_path: bundles
             "/public/uploads":
-                source: instance
+                source: storage
                 source_path: uploads
             "/public/media":
-                source: instance
+                source: storage
                 source_path: media
         web:
             locations:
