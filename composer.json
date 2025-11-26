@@ -117,6 +117,8 @@
             "@php bin/console sylius:inform-about-gus --ansi",
             "@php bin/console sylius:show-plus-info --ansi"
         ],
+        "rector-dry-run": "vendor/bin/rector process --dry-run",
+        "rector-apply": "vendor/bin/rector process",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
