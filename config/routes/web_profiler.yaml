@@ -1,8 +1,8 @@
 when@dev:
-    _wdt:
-        resource: '@WebProfilerBundle/Resources/config/routing/wdt.xml'
+    web_profiler_wdt:
+        resource: '@WebProfilerBundle/Resources/config/routing/wdt.php'
         prefix: /_wdt
 
-    _profiler:
-        resource: '@WebProfilerBundle/Resources/config/routing/profiler.xml'
+    web_profiler_profiler:
+        resource: '@WebProfilerBundle/Resources/config/routing/profiler.php'
         prefix: /_profiler
