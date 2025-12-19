@@ -77,7 +77,8 @@
             "symfony/flex": true,
             "symfony/runtime": true,
             "symfony/thanks": false
-        }
+        },
+        "bump-after-update": true
     },
     "extra": {
         "branch-alias": {
