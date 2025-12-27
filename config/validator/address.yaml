@@ -1,0 +1,19 @@
+App\Entity\Addressing\Address:
+    constraints:
+        - Symfony\Component\Validator\Constraints\Expression:
+              expression: "(this.getCompany() === null or this.getCompany() == '') or (this.getNip() !== null and this.getNip() != '')"
+              message: 'Proszę podać NIP dla firmy.'
+              groups: [sylius, sylius_shipping_address_update]
+    properties:
+        phoneNumber:
+            - NotBlank:
+                  message: 'Proszę podać numer telefonu.'
+                  groups: [sylius, sylius_shipping_address_update]
+            - Regex:
+                  # Akceptuje: +48 123 456 789 lub 123 456 789 (spacje opcjonalne)
+                  pattern: '/^(?:\+48\s?)?\d{3}\s?\d{3}\s?\d{3}$/'
+                  message: 'Numer telefonu musi być w formacie +48 123 456 789 lub 123 456 789.'
+                  groups: [sylius, sylius_shipping_address_update]
+        nip:
+            - App\Validator\Constraints\Nip:
+                  groups: [sylius, sylius_shipping_address_update]

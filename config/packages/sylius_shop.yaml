@@ -1,3 +1,6 @@
 sylius_shop:
+    checkout_resolver:
+        # Allow checkout URLs both with and without a locale prefix (e.g. "/pl/checkout/..." or "/checkout/...").
+        pattern: '^/(?!%env(resolve:SYLIUS_ADMIN_ROUTING_PATH_NAME)%|api/.*|api$|media/.*)(?:[^/]+/)?checkout/.+'
     product_grid:
         include_all_descendants: true

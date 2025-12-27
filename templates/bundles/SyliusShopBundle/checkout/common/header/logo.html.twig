@@ -1,0 +1,29 @@
+{# Checkout logo override for Galante Wypieki (static, compact) #}
+<style>
+    .checkout-site-logo {
+        display: inline-block;
+        width: 6.5rem;
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+    }
+
+    .checkout-site-logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .checkout-site-logo {
+            width: 4.9rem;
+            margin-top: -0.75rem;
+            margin-bottom: -0.75rem;
+        }
+    }
+</style>
+
+<div class="col">
+    <a class="checkout-site-logo" href="{{ path('sylius_shop_homepage') }}" aria-label="Galante Wypieki">
+        <img src="{{ asset('media/logo-galante-wypieki.png') }}" alt="Galante Wypieki">
+    </a>
+</div>

@@ -1,0 +1,15 @@
+{# Homepage banner override copied from Sylius default #}
+<style>
+    .homepage-banner-logo {
+        filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.22));
+    }
+</style>
+<div class="mb-6" role="banner" aria-label="{{ 'sylius.ui.home'|trans }}">
+    <h1 class="visually-hidden">{{ sylius.channel.name }}</h1>
+    <div class="overflow-hidden">
+        <div class="d-flex justify-content-center align-items-center position-relative">
+            <img src="{{ asset('media/baner-maslane.webp') }}" width="1920" height="100%" class="img-fluid" alt="{{ 'sylius.ui.home'|trans }}">
+            <img src="{{ asset('media/galante-wypieki-juz-online.webp', 'shop') }}" class="position-absolute homepage-banner-logo" style="max-width: 40vw" alt="{{ 'sylius.homepage.new_collection'|trans }}">
+        </div>
+    </div>
+</div>

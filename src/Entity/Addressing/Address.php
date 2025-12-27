@@ -11,4 +11,16 @@ use Sylius\Component\Core\Model\Address as BaseAddress;
 #[ORM\Table(name: 'sylius_address')]
 class Address extends BaseAddress
 {
+    #[ORM\Column(name: 'nip', type: 'string', length: 255, nullable: true)]
+    private ?string $nip = null;
+
+    public function getNip(): ?string
+    {
+        return $this->nip;
+    }
+
+    public function setNip(?string $nip): void
+    {
+        $this->nip = $nip;
+    }
 }

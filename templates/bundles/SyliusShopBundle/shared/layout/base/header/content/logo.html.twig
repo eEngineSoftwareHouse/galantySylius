@@ -1,0 +1,46 @@
+{# Custom logo for Galante Wypieki #}
+<style>
+    .floating-site-logo {
+        position: fixed;
+        display: inline-block;
+        top: 0;
+        left: 1.5rem;
+        transform: translateY(0);
+        width: 10rem;
+        max-width: 28vw;
+        padding: 0.25rem 0.75rem 0.5rem;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 0 0 1.25rem 1.25rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+        z-index: 2000;
+    }
+
+    .floating-site-logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .floating-site-logo {
+            position: static;
+            top: auto;
+            left: auto;
+            width: 4.9rem;
+            max-width: none;
+            transform: none;
+            padding: 0;
+            margin-top: -0.75rem;
+            margin-bottom: -0.75rem;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+</style>
+
+<div class="col">
+    <a href="{{ path('sylius_shop_homepage') }}" class="floating-site-logo" aria-label="Galante Wypieki">
+        <img src="{{ asset('media/logo-galante-wypieki.png') }}" alt="Galante Wypieki" class="img-fluid">
+    </a>
+</div>

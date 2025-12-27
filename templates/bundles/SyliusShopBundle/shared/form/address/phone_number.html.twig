@@ -1,0 +1,7 @@
+{% set form = hookable_metadata.context.form %}
+{{ form_row(form.phoneNumber, {
+    label: 'sylius.form.address.phone_number'|trans,
+    label_attr: form.phoneNumber.vars.label_attr|default({})|merge({
+        class: (form.phoneNumber.vars.label_attr.class|default('form-label')) ~ ' required'
+    })
+}) }}
