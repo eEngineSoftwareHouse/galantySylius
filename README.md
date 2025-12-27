@@ -1,7 +1,7 @@
 # galantySylius
 
 <p align="center">
-  <img src="public/static/brand/logo-galante-wypieki.png" alt="Galante Wypieki" width="200">
+  <img src="public/static/brand/logo-galante-wypieki.webp" alt="Galante Wypieki" width="200">
 </p>
 
 Ten projekt bazuje na ([Sylius Standard Edition](https://github.com/Sylius/Sylius-Standard)).
