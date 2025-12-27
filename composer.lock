@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6964dbf624c7cbda725c33577c77c2f6",
+    "content-hash": "6a3fca3d27d4c498c68639bcc638f944",
     "packages": [
         {
             "name": "alcohol/iso4217",
@@ -2985,6 +2985,113 @@
                 "source": "https://github.com/FakerPHP/Faker/tree/v1.24.1"
             },
             "time": "2024-11-21T13:46:39+00:00"
+        },
+        {
+            "name": "flux-se/sylius-stripe-plugin",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FLUX-SE/SyliusStripePlugin.git",
+                "reference": "5eda99f5e398a248a492c7185237228f02c81630"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FLUX-SE/SyliusStripePlugin/zipball/5eda99f5e398a248a492c7185237228f02c81630",
+                "reference": "5eda99f5e398a248a492c7185237228f02c81630",
+                "shasum": ""
+            },
+            "require": {
+                "stripe/stripe-php": "^16.1",
+                "sylius/core-bundle": "^2.0"
+            },
+            "conflict": {
+                "sylius/sylius": "<=2.0.3"
+            },
+            "require-dev": {
+                "behat/behat": "^3.7",
+                "dbrekelmans/bdi": "^1.2",
+                "doctrine/data-fixtures": "^1.8",
+                "doctrine/orm": "^2.20",
+                "friends-of-behat/mink": "^1.9",
+                "friends-of-behat/mink-browserkit-driver": "^1.4",
+                "friends-of-behat/mink-debug-extension": "^2.0",
+                "friends-of-behat/mink-extension": "^2.5",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.1",
+                "friends-of-behat/symfony-extension": "^2.1",
+                "friends-of-behat/variadic-extension": "^1.3",
+                "lchrusciel/api-test-case": "^5.3",
+                "mockery/mockery": "^1.6",
+                "nyholm/psr7": "^1.8",
+                "phpspec/phpspec": "^7.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan-doctrine": "^1.0",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.4",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpstan/phpstan-symfony": "^1.4",
+                "phpstan/phpstan-webmozart-assert": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "robertfausk/behat-panther-extension": "^1.1",
+                "spaze/phpstan-stripe": "^3.2",
+                "sylius-labs/coding-standard": "^4.1",
+                "sylius-labs/suite-tags-extension": "^0.2.0",
+                "sylius/sylius": "^2.0",
+                "symfony/browser-kit": "^6.4|^7.1",
+                "symfony/debug-bundle": "^6.4|^7.1",
+                "symfony/dotenv": "^6.4|^7.1",
+                "symfony/intl": "^6.4|^7.1",
+                "symfony/runtime": "^6.4|^7.1",
+                "symfony/web-profiler-bundle": "^6.4|^7.1",
+                "theofidry/alice-data-fixtures": "^1.7"
+            },
+            "suggest": {
+                "sylius/admin-bundle": "Use the Sylius default admin",
+                "sylius/api-bundle": "Use the Sylius default API",
+                "sylius/shop-bundle": "Use the Sylius default front shop"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "runtime": {
+                    "dotenv_path": "tests/Application/.env",
+                    "project_dir": "tests/Application"
+                },
+                "branch-alias": {
+                    "dev-main": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FluxSE\\SyliusStripePlugin\\": "src/",
+                    "Tests\\FluxSE\\SyliusStripePlugin\\Behat\\": "tests/Behat"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Francis HILAIRE",
+                    "email": "Prometee@users.noreply.github.com"
+                }
+            ],
+            "description": "Sylius Stripe plugin using Payment Request",
+            "keywords": [
+                "checkout",
+                "gateway",
+                "payum",
+                "sca",
+                "session",
+                "stripe",
+                "sylius",
+                "sylius-plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/FLUX-SE/SyliusStripePlugin/issues",
+                "source": "https://github.com/FLUX-SE/SyliusStripePlugin/tree/1.0.5"
+            },
+            "time": "2025-09-02T08:04:30+00:00"
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
@@ -6879,6 +6986,65 @@
                 "source": "https://github.com/stof/StofDoctrineExtensionsBundle/tree/v1.15.2"
             },
             "time": "2025-12-18T17:03:44+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v16.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "d6de0a536f00b5c5c74f36b8f4d0d93b035499ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d6de0a536f00b5c5c74f36b8f4d0d93b035499ff",
+                "reference": "d6de0a536f00b5c5c74f36b8f4d0d93b035499ff",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v16.6.0"
+            },
+            "time": "2025-02-24T22:35:29+00:00"
         },
         {
             "name": "sylius-labs/association-hydrator",

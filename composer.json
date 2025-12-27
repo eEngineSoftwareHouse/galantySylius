@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^8.3",
+        "flux-se/sylius-stripe-plugin": "^1.0",
         "sylius/sylius": "^2.2",
         "symfony/dotenv": "^7.4",
         "symfony/flex": "^2.10",
