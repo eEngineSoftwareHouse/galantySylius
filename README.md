@@ -1,16 +1,8 @@
-<p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://media.sylius.com/sylius-logo-800-dark.png">
-          <source media="(prefers-color-scheme: light)" srcset="https://media.sylius.com/sylius-logo-800.png">
-          <img alt="Sylius Logo." src="https://media.sylius.com/sylius-logo-800.png">
-        </picture>
-    </a>
-</p>
+# galantySylius
 
-<h1 align="center">Sylius Standard Edition</h1>
+Ten projekt bazuje na ([Sylius Standard Edition](https://github.com/Sylius/Sylius-Standard)).
 
-<p align="center">This is Sylius Standard Edition repository for starting new projects.</p>
+Powstaje tu sklep dla piekarni ([Galante Wypieki](https://galantewypieki.pl)), sprzedającej bułki burgerowe pod adresem ([zamow.galantewypieki.pl](https://zamow.galantewypieki.pl)). Cel jest prosty: uruchomić e‑commerce możliwie najniższym kosztem, wykorzystując AI wszędzie tam, gdzie to tylko możliwe. Przy okazji traktuję to jako powrót do kodowania po dłuższej przerwie – chcę odświeżyć wiedzę i nauczyć się, jak to wszystko działa w praktyce.
 
 ## About
 
