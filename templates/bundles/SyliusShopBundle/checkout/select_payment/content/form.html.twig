@@ -1,0 +1,86 @@
+{# Override to auto-submit payment step when only one payment method is available #}
+{% form_theme form '@SyliusShop/form/theme.html.twig' %}
+
+<div {{ attributes }}>
+    {{ form_start(form, {'action': path('sylius_shop_checkout_select_payment'), 'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_errors(form) }}
+
+    <input type="hidden" name="_method" value="PUT" />
+
+    {% hook 'form' with { form, order: resource } %}
+
+    {{ form_row(form._token) }}
+    {{ form_end(form, {'render_rest': false}) }}
+</div>
+
+<script>
+    (function () {
+        function autoSubmitSingleChoice() {
+            const radios = Array.from(document.querySelectorAll('input[type="radio"][name*="[payments]"][name$="[method]"]'));
+            if (radios.length === 0) {
+                return false;
+            }
+
+            // Find the parent form (fallback: first form on the page).
+            let formEl = radios[0].closest('form');
+            if (!formEl) {
+                formEl = document.querySelector('form');
+            }
+            if (!formEl) {
+                return false;
+            }
+
+            const groupNames = Array.from(new Set(radios.map((input) => input.getAttribute('name'))));
+            let allSingleChoice = groupNames.length > 0;
+
+            groupNames.forEach((name) => {
+                const group = Array.from(document.querySelectorAll(`input[type="radio"][name="${name}"]`));
+                if (group.length === 1) {
+                    group[0].checked = true;
+                } else {
+                    allSingleChoice = false;
+                }
+            });
+
+            if (allSingleChoice) {
+                if (formEl.dataset.autosubmitted === '1') {
+                    return true;
+                }
+                formEl.dataset.autosubmitted = '1';
+
+                if (typeof formEl.requestSubmit === 'function') {
+                    formEl.requestSubmit();
+                } else {
+                    formEl.submit();
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        function setupObserver() {
+            // Try once immediately in case the radios are already rendered.
+            if (autoSubmitSingleChoice()) {
+                return;
+            }
+
+            const target = document.querySelector('form') || document.body;
+            const observer = new MutationObserver(() => {
+                if (autoSubmitSingleChoice()) {
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(target, { childList: true, subtree: true });
+            setTimeout(() => autoSubmitSingleChoice(), 500);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupObserver);
+        } else {
+            setupObserver();
+        }
+    })();
+</script>
