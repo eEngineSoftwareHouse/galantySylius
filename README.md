@@ -6,82 +6,9 @@
 
 Ten projekt bazuje na ([Sylius Standard Edition](https://github.com/Sylius/Sylius-Standard)).
 
-Powstaje tu ecommerce dla piekarni bułek burgerowych ([Galante Wypieki](https://galantewypieki.pl)), który będzie działał pod adresem ([zamow.galantewypieki.pl](https://zamow.galantewypieki.pl)). Cel jest prosty: uruchomić e‑commerce możliwie najniższym kosztem, wykorzystując AI wszędzie tam, gdzie to tylko możliwe. Przy okazji traktuję to jako powrót do kodowania po dłuższej przerwie – chcę odświeżyć wiedzę i nauczyć się, jak to wszystko działa w praktyce.
+Powstaje tu ecommerce dla piekarni bułek burgerowych ([Galante Wypieki](https://galantewypieki.pl)), który będzie działał pod adresem ([zamow.galantewypieki.pl](https://zamow.galantewypieki.pl)). Cel jest prosty: uruchomić e‑commerce możliwie najniższym kosztem, wykorzystując AI wszędzie tam, gdzie to tylko możliwe. Przy okazji traktuję to jako powrót do "kodowania" po dłuższej przerwie – chcę odświeżyć wiedzę i nauczyć się, jak to wszystko działa w praktyce.
 
-## About
-
-Sylius is the first decoupled eCommerce framework based on [**Symfony**](http://symfony.com) and [**Doctrine**](http://doctrine-project.org). 
-The highest quality of code, strong testing culture, built-in Agile (BDD) workflow and exceptional flexibility make it the best solution for application tailored to your business requirements. 
-Enjoy being an eCommerce Developer again!
-
-Powerful REST API allows for easy integrations and creating unique customer experience on any device.
-
-We're using full-stack Behavior-Driven-Development, with [Behat](http://behat.org)
-
-## Documentation
-
-Documentation is available at [docs.sylius.com](http://docs.sylius.com).
-
-## Installation
-
-### Traditional
-```bash
-$ wget http://getcomposer.org/composer.phar
-$ php composer.phar create-project sylius/sylius-standard project
-$ cd project
-$ yarn install
-$ yarn build
-$ php bin/console sylius:install
-$ symfony serve
-$ open http://localhost:8000/
-```
-
-For more detailed instruction about traditional way of running Sylius please visit [installation chapter in our docs](https://docs.sylius.com/the-book/sylius-ce-installation).
-
-### Docker
-
-You can run Sylius and all associated infrastructure dependencies (PHP, Nginx, MySQL, Node) on your machine using only Docker containers. Make sure you have installed [Docker](https://docs.docker.com/get-docker/) on your local machine.
-
-**Option 1: Get the latest release**
-```bash
-LATEST=$(curl -s https://api.github.com/repos/Sylius/Sylius-Standard/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
-curl -L -o sylius-latest.zip https://github.com/Sylius/Sylius-Standard/archive/refs/tags/$LATEST.zip
-unzip sylius-latest.zip
-cd Sylius-Standard-*
-```
-
-**Option 2: List available versions**
-```bash
-curl -s https://api.github.com/repos/Sylius/Sylius-Standard/releases | grep '"tag_name"' | cut -d'"' -f4 | head -10
-```
-
-**Option 3: Get a specific version**
-```bash
-VERSION="v2.x.x"  # Replace with desired version
-curl -L -o sylius-$VERSION.zip https://github.com/Sylius/Sylius-Standard/archive/refs/tags/$VERSION.zip
-unzip sylius-$VERSION.zip
-cd Sylius-Standard-*
-```
-
-**Initialize the project (required for all options):**
-```bash
-make init
-```
-
-For more detailed instruction about Docker way of running Sylius please visit [Docker installation chapter in our docs](https://docs.sylius.com/getting-started-with-sylius/sylius-ce-installation-with-docker).
-
-## Troubleshooting
-
-If something goes wrong, errors & exceptions are logged at the application level:
-
-```bash
-$ tail -f var/log/prod.log
-$ tail -f var/log/dev.log
-```
-
-## Contributing
-
-Would like to help us and build the most developer-friendly eCommerce framework? Start from reading our [Contribution Guide](https://docs.sylius.com/en/latest/contributing/)!
+Poniżej trochę referali do oryginalnych źródeł, aby docenić twórców.
 
 ## Stay Updated
 
