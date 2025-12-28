@@ -21,6 +21,10 @@ class NipValidator extends ConstraintValidator
         }
 
         $digits = preg_replace('/\\D+/', '', (string) $value);
+        if ($digits === null) {
+            $this->context->buildViolation($constraint->message)->addViolation();
+            return;
+        }
 
         if (strlen($digits) !== 10) {
             $this->context->buildViolation($constraint->message)->addViolation();
