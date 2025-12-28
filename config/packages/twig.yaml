@@ -3,7 +3,7 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     date:
-        timezone: '%env(default:Europe/Warsaw:APP_TIMEZONE)%'
+        timezone: '%env(APP_TIMEZONE)%'
 
 services:
     _defaults:
