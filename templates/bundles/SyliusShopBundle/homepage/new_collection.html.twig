@@ -1,0 +1,29 @@
+<div class="container mb-6" role="region" aria-labelledby="new-collection">
+    {#<div class="mb-5">
+        <h2 id="new-collection">{{ 'sylius.homepage.new_collection'|trans }}</h2>
+    </div>#}
+
+    <div class="photo-grid">
+        {% set allPhotos = [
+            'media/show_room/homepage-photo-1.webp',
+            'media/show_room/homepage-photo-2.webp',
+            'media/show_room/homepage-photo-3.webp',
+            'media/show_room/homepage-photo-4.webp',
+            'media/show_room/homepage-photo-5.webp',
+            'media/show_room/homepage-photo-6.webp',
+            'media/show_room/homepage-photo-7.webp',
+            'media/show_room/homepage-photo-8.webp'
+        ] %}
+        {% set shuffled = allPhotos|shuffle %}
+        {% set selected = shuffled|slice(0, 3) %}
+
+        {% for path in selected %}
+            <div class="photo-grid-item-{{ loop.index }}">
+                <img
+                    src="{{ asset(path, 'shop') }}"
+                    class="object-fit-cover w-100 h-100 rounded-3"
+                    alt="{{ 'sylius.homepage.new_collection'|trans }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
