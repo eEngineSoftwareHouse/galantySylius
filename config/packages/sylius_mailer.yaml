@@ -1,0 +1,4 @@
+sylius_mailer:
+    sender:
+        name: 'Galante Wypieki'
+        address: 'zamow@galantewypieki.pl'
