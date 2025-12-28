@@ -67,6 +67,9 @@ jobs:
                 if: "${{ inputs.branch == '' }}"
                 uses: actions/checkout@v4
 
+            -   name: "Prepare env file"
+                run: cp .env.example .env
+
             -   name: Build application
                 uses: SyliusLabs/BuildTestAppAction@v3.2.0
                 with:
@@ -136,6 +139,9 @@ jobs:
             -   name: "Checkout"
                 if: "${{ inputs.branch == '' }}"
                 uses: actions/checkout@v4
+
+            -   name: "Prepare env file"
+                run: cp .env.example .env
 
             -   name: Build application
                 uses: SyliusLabs/BuildTestAppAction@v3.2.0
