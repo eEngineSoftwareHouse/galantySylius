@@ -20,6 +20,11 @@ class NipValidator extends ConstraintValidator
             return;
         }
 
+        if (!\is_scalar($value) && !$value instanceof \Stringable) {
+            $this->context->buildViolation($constraint->message)->addViolation();
+            return;
+        }
+
         $digits = preg_replace('/\\D+/', '', (string) $value);
         if ($digits === null) {
             $this->context->buildViolation($constraint->message)->addViolation();
