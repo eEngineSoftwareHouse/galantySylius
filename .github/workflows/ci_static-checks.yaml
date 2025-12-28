@@ -93,6 +93,9 @@ jobs:
             -   name: "Install dependencies"
                 run: composer update --no-interaction --no-scripts
 
+            -   name: "Prepare env file"
+                run: cp .env.example .env
+
 #            -   name: "Validate composer.json"
 #                run: composer validate --strict --no-check-version
 
