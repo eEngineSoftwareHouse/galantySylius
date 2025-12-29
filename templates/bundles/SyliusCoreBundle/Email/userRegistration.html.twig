@@ -1,0 +1,31 @@
+{% extends '@SyliusCore/Email/layout.html.twig' %}
+
+{% block subject %}
+    {{ 'sylius.email.user_registration.subject'|trans({}, null, localeCode)|raw }}
+{% endblock %}
+
+{% block content %}
+    {% set brandColor = '#C97A2B' %}
+    {% set brandHover = '#7A3F12' %}
+    {% if sylius_bundle_loaded_checker('SyliusShopBundle') %}
+        {% set url = sylius_channel_url(path('sylius_shop_homepage', {'_locale': localeCode}), channel) %}
+    {% endif %}
+    <div style="text-align: center; margin-bottom: 30px;">
+        <div style="font-size: 24px;">
+            {{ 'sylius.email.user_registration.welcome_to_our_store'|trans({}, null, localeCode) }}<br>
+        </div>
+        {{ 'sylius.email.user_registration.you_have_just_been_registered'|trans({}, null, localeCode) }} {{ user.username }}.
+    </div>
+
+    <div style="text-align: center;">
+        {% if sylius_bundle_loaded_checker('SyliusShopBundle') %}
+            <a href="{{ url|raw }}" class="brand-btn" style="background: {{ brandColor }};" onmouseover="this.style.background='{{ brandHover }}';" onmouseout="this.style.background='{{ brandColor }}';">
+                {{ 'sylius.email.user_registration.start_shopping'|trans({}, null, localeCode) }}
+            </a>
+        {% else %}
+            <a href="{{ channel.hostname|raw }}" class="brand-btn" style="background: {{ brandColor }};" onmouseover="this.style.background='{{ brandHover }}';" onmouseout="this.style.background='{{ brandColor }}';">
+                {{ 'sylius.email.user_registration.start_shopping'|trans({}, null, localeCode) }}
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}

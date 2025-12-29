@@ -1,0 +1,12 @@
+{% set brandColor = '#C97A2B' %}
+
+<div style="color: {{ brandColor }};">
+    <strong>{{ contactRequest.firstName }} {{ contactRequest.lastName }}</strong>
+</div>
+<div style="color: {{ brandColor }};">
+    {{ contactRequest.email }}
+</div>
+
+<div>
+    {{ contactRequest.message|nl2br }}
+</div>
