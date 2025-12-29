@@ -18,7 +18,16 @@
 
 ## Testowanie / weryfikacja
 - Brak CI – po istotnych zmianach przynajmniej manualny smoke na checkout.
+- Gdy modyfikujesz kod/konfigurację PHP lub Twig, uruchom szybkie lintery:
+  - `docker compose exec php php bin/console lint:twig templates`
+  - (jeśli to logika PHP) `docker compose exec php ./vendor/bin/phpstan analyse` – nawet krótką ścieżkę lub pojedynczy plik, by złapać regresje.
 - Jeśli dodajesz walidator/logikę, mile widziane testy (PHPUnit/Behat), ale nie blokują merge.
+
+## Cache po zmianach frontu/szablonów
+- Po każdej zmianie w plikach Twig/CSS/JS (assets/templates) czyść i dogrzej cache prod:
+  - `docker compose exec php php bin/console cache:clear --env=prod --no-warmup`
+  - `docker compose exec php php bin/console cache:warmup --env=prod --no-optional-warmers`
+- Pamiętaj o przebudowie assetów, gdy zmieniasz CSS/JS: `docker compose exec nodejs yarn build` (w razie OOM zwiększ `NODE_OPTIONS=--max_old_space_size=3072`).
 
 ## Jak korzystać z pliku
 - Agent powinien przeczytać i stosować te wytyczne przed edycją. Jeśli nie wczyta ich automatycznie, wskaż ten plik w poleceniu.
