@@ -1,0 +1,41 @@
+sylius_shop_static_about:
+  path: /o-galantych-wypiekach
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/about.html.twig'
+
+sylius_shop_static_terms:
+  path: /regulamin-sklepu
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/terms.html.twig'
+
+sylius_shop_static_privacy:
+  path: /polityka-prywatnosci
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/privacy.html.twig'
+
+sylius_shop_static_contact:
+  path: /skontaktuj-sie-z-nami
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/contact.html.twig'
+
+sylius_shop_static_faq:
+  path: /pytania-i-odpowiedzi
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/faq.html.twig'
+
+sylius_shop_static_delivery:
+  path: /dostawa-i-platnosc
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/delivery.html.twig'
+
+sylius_shop_static_returns:
+  path: /zasady-zwrotow
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+  defaults:
+    template: 'shop/static/returns.html.twig'
